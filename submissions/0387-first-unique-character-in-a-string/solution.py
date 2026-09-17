@@ -1,12 +1,15 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        chars = dict() 
-        for char in s: 
-            if chars.get(char) is None: 
+        # get all the occurances
+        chars = {}
+        for char in s:
+            if chars.get(char):
+                chars[char] += 1
+            else:
                 chars.update({char: 1})
-            else: 
-                chars[char] = chars.get(char) + 1        
-        for key in chars: 
-            if chars.get(key) == 1:
-                return s.index(key)
+        
+        # find the first 1 and get its index
+        for key, value in chars.items():
+            if value == 1:
+                return list(s).index(key)
         return -1
