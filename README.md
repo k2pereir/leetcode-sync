@@ -1,2 +1,1 @@
-# leetcode-sync
-i need a job plspls
+#iloveleetcode #nocap
